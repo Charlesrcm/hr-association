@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fomulaire d'ajout d'employée</title>
+</head>
+
+<header>
+  <nav>
+    <ol>
+      <li><a th:href="@{/}">Retour à la page d'accueil</a></li>
+    </ol>
+  </nav>
+</header>
+
+<body>
+  <h2>Création d'un employé</h2>
+
+  <form method="POST" th:action="@{/saveEmployee}" th:object="${employee}">
+    <label for="firstName">Prénom : </label><input type="text" name="firstName" id="firstName" th:field="*{firstName}">
+    <label for="lastName">Nom : </label><input type="text" name="lastName" id="lastName" th:field="*{lastName}">
+    <label for="mail">Mail : </label><input type="text" name="mail" id="mail" th:field="*{mail}">
+    <label for="password">Mot de passe : </label><input type="password" name="password" id="password"
+      th:field="*{password}">
+    <button type="submit">Créer</button>
+  </form>
+</body>
+
+</html>

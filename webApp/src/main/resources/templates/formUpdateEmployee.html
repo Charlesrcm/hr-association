@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modification d'un employé</title>
+</head>
+
+<header>
+  <nav>
+    <ol>
+      <li><a th:href="@{/}">Retour à l'accueil</a></li>
+    </ol>
+  </nav>
+</header>
+
+<body>
+  <div style="display: flex; flex-flow: column;">
+
+    <h2>Modification de l'employé <span th:text="${employee.firstName}"></span></h2>
+
+    <form th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+      <input type="hidden" name="idEmployee" th:field="*{id}">
+
+      <label for="firstName">Prénom : </label>
+      <input type="text" th:field="*{firstName}" id="firstName">
+
+      <label for="lastName">Nom : </label>
+      <input type="text" th:field="*{lastName}" id="lastName">
+
+      <label for="mail">Mail : </label>
+      <input type="text" th:field="*{mail}" id="mail">
+
+      <button type="submit">Modifier</button>
+    </form>
+
+  </div>
+
+</body>
+
+</html>
